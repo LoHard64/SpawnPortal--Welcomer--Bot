@@ -1,5 +1,4 @@
 const discord = require("discord.js");
-const Canvas = require("canvas");
 const fs = require("fs");
 
 if (process.env.NODE_ENV !== "production") {
