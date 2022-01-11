@@ -1,5 +1,7 @@
 const Canvas = require("canvas");
 
+Canvas.registerFont("./fonts/Minecrafter.Alt.ttf", { family: "Minecrafter" });
+
 var welcomeCanvas = {};
 welcomeCanvas.create = Canvas.createCanvas(1024, 500);
 welcomeCanvas.context = welcomeCanvas.create.getContext("2d");

@@ -2,6 +2,11 @@ const client = require("../index").client;
 const discord = require("discord.js");
 const Canvas = require("canvas");
 
+Canvas.registerFont("./fonts/1_Minecraft-Regular.otf", {
+  family: "Minecraft",
+});
+Canvas.registerFont("./fonts/NotoSans-Bold.ttf", { family: "Noto Sans" });
+
 const welcomeCanvas = require("../utils/canvas");
 
 client.on("guildMemberAdd", async (member) => {
