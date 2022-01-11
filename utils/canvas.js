@@ -3,7 +3,7 @@ const Canvas = require("canvas");
 var welcomeCanvas = {};
 welcomeCanvas.create = Canvas.createCanvas(1024, 500);
 welcomeCanvas.context = welcomeCanvas.create.getContext("2d");
-welcomeCanvas.context.font = "72px minecrafter";
+welcomeCanvas.context.font = "72px minecrafter alt";
 welcomeCanvas.context.fillStyle = "#ffffff";
 
 Canvas.loadImage("./assets/bg.png").then(async (img) => {

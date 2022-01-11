@@ -35,6 +35,7 @@ client.on("guildMemberAdd", async (member) => {
       iconURL:
         "https://lh3.googleusercontent.com/YgldbDl0fWVGbZ2bQdlckPPr2ic4v4QMQM2hzykxTF9zPgfsm4V0p2K13L3IguSiYvY2FNWegJR3msObSznpdDrAEUAr1zMUdw=s400",
     })
+    .setColor("#0c6c84")
     .setTitle(
       `Selamat Datang di Official Discord Server **${member.guild.name}**!!!`
     )
@@ -43,7 +44,7 @@ client.on("guildMemberAdd", async (member) => {
   Jika ada yang ingin ditanyakan, silahkan bertanya ke <@&907610677701656616> atau ke <@&907611023136153621>`
     )
     .setImage(`attachment://welcome-member.png`)
-    .setFooter({ name: "discord.io/lohardlysmp" })
+    .setFooter({ text: "discord.io/lohardlysmp" })
     .setTimestamp();
 
   try {

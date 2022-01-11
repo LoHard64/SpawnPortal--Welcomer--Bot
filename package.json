@@ -1,5 +1,5 @@
 {
-  "name": "spawnportal-(welcomer)-bot",
+  "name": "spawnportal-welcomer-bot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "canvas": "^2.8.0",
     "discord.js": "^13.5.1",
