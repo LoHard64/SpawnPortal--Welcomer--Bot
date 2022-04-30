@@ -18,6 +18,7 @@ const client = new discord.Client({
 client.events = new discord.Collection();
 module.exports.client = client;
 
+// events handler
 fs.readdirSync("./events/").forEach((file) => {
   var jsFiles = fs
     .readdirSync("./events/")

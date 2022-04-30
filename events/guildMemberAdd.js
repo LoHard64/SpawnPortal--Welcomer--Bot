@@ -10,7 +10,10 @@ Canvas.registerFont("./fonts/NotoSans-Bold.ttf", { family: "Noto Sans" });
 const welcomeCanvas = require("../utils/canvas");
 
 client.on("guildMemberAdd", async (member) => {
-  const welcomechannel = client.channels.cache.get("919158447168176158");
+  const welcomeChannel = member.guild.channels.cache.find(
+    (c) => c.name === "welcome"
+  );
+  if (!welcomeChannel) return;
   let canvas = welcomeCanvas;
   canvas.context.font = "42px minecraft";
   canvas.context.textAlign = "center";
@@ -53,11 +56,11 @@ client.on("guildMemberAdd", async (member) => {
     .setTimestamp();
 
   try {
-    welcomechannel.send({
+    welcomeChannel.send({
       embeds: [embed],
       files: [attachment],
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 });
