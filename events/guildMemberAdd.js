@@ -10,10 +10,14 @@ Canvas.registerFont("./fonts/NotoSans-Bold.ttf", { family: "Noto Sans" });
 const welcomeCanvas = require("../utils/canvas");
 
 client.on("guildMemberAdd", async (member) => {
-  const welcomeChannel = member.guild.channels.cache.find(
-    (c) => c.name === "welcome"
-  );
-  if (!welcomeChannel) return;
+  const welcomer = new discord.WebhookClient({
+    //for test: https://discord.com/api/webhooks/971020854219661402/eBOV13BwCMnM-X4KeI09fetjL2L1fKjKjngvf3-NAyHaZznNkv3mXd4mVRk012e2_xSA
+    //https://discord.com/api/webhooks/971011237842399263/Oehs6mH2F4jqKffsR3I9cO9TaarQ6zfwihWJOffXtad1ywvD2D-OqVDz30BGuoqgu4CX
+    id: "971011237842399263",
+    token:
+      "Oehs6mH2F4jqKffsR3I9cO9TaarQ6zfwihWJOffXtad1ywvD2D-OqVDz30BGuoqgu4CX",
+  });
+
   let canvas = welcomeCanvas;
   canvas.context.font = "42px minecraft";
   canvas.context.textAlign = "center";
@@ -48,15 +52,15 @@ client.on("guildMemberAdd", async (member) => {
       `Selamat Datang di Official Discord Server **${member.guild.name}**!!!`
     )
     .setDescription(
-      `Halo ${member}, Selamat datang di server kita!! Harap terlebih dahulu membaca dan menaati semua <#914739553917624400> yang ada di server kita!!!
-  Jika ada yang ingin ditanyakan, silahkan bertanya ke <@&907610677701656616> atau ke <@&907611023136153621>`
+      `Halo ${member}, Selamat datang di server ${member.guild.name}!! Harap terlebih dahulu membaca dan menaati semua <#914739553917624400> yang ada di server kita!!!
+  Jika ada yang ingin ditanyakan, silahkan bertanya ke <@&968338987360083989> atau ke <@&968338987360083991>`
     )
     .setImage(`attachment://welcome-member.png`)
     .setFooter({ text: "discord.io/lohardlysmp" })
     .setTimestamp();
 
   try {
-    welcomeChannel.send({
+    welcomer.send({
       embeds: [embed],
       files: [attachment],
     });
